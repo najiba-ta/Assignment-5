@@ -1,40 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    <body class="bg bg-gray-100 p-10">
-    
-    <!--Main Page-->
-    
-    <div id="mainPage">
-            <!--NavBar-->
-    <nav>
-    <div class="navbar bg-base-100 shadow-sm">
-  <div class="flex-1">
-    <a class="btn btn-ghost text-xl">All Issues</a>
-  </div>
-  <div class="flex gap-2">
-    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-     <button id="btnSearch" class="btn btn-primary">Search</button>
-  </div>
-</div>
-    </nav>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Issue Tracker</title>
 
-    <!--Nav Button-->
-    <div class="bg-white p-4 shadow flex gap-2 mt-4 justify-center">
-      <button class="btn btn-primary" id="tabAll">All</button>
-      <button class="btn btn-outline" id="tabOpen">Open</button>
-      <button class="btn btn-outline" id="tabClosed">Closed</button>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="bg bg-gray-100">
+
+<!-- Navbar -->
+<div class="flex justify-between bg-white py-2 px-4 items-center">
+    <div>
+        <h1 class="text-3xl font-bold">All Issues</h1>
     </div>
 
-    
+    <div>
+        <input id="searchInput" class="p-1 border rounded" type="text" placeholder="search issues">
+        <button onclick="searchIssues()" class="btn btn-primary">Search</button>
+    </div>
+</div>
+
+<!-- Tabs -->
+<div class="flex justify-center">
+    <div class="bg-white p-4 shadow flex gap-2 mt-4 w-[80%] mb-5">
+
+        <button id="tabAll" class="btn" onclick="filterBtn('tabAll')">All</button>
+        <button id="tabOpen" class="btn" onclick="filterBtn('tabOpen')">Open</button>
+        <button id="tabClosed" class="btn" onclick="filterBtn('tabClosed')">Closed</button>
+
+    </div>
+</div>
+
+
+<div class="flex justify-center">
+    <div class="bg-white p-4 shadow w-[80%] flex justify-between items-center mb-4">
+         <div>
+            <div class="flex items-center gap-3">
+            <span> <img src="./assets/Aperture.png" alt=""></span>
+            <p class="font-semibold">
+             <span id="issueCount">0</span> Issues
+            </p>
         </div>
-    
-    
-    <script src="./home.js"></script>
+              <p class="ml-10 text-gray-500">Track and manage your project issue</p>
+         </div>
+
+        <div class="flex gap-4 text-sm">
+            <span class="text-green-600 font-semibold"><span class="h-[10px] w-[10px] rounded-full inline-block text-green-600 bg-green-600 mr-2"></span>  Open</span>
+            <span class="text-purple-600 font-semibold"> <span class="h-[10px] w-[10px] rounded-full inline-block text-purple-600 bg-purple-600 mr-2"></span>Closed</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- Loading Spinner -->
+<div id="loadingSpinner" class="flex justify-center my-6 hidden">
+    <span class="loading loading-spinner loading-lg text-primary"></span>
+</div>
+
+<!-- Cards -->
+<section class="flex justify-center">
+
+<div id="issuesContainer"
+class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[80%]">
+
+</div>
+
+</section>
+
+<dialog id="issueModal" class="modal">
+  <div class="modal-box">
+    <h3 id="modalTitle" class="font-bold text-lg"></h3>
+    <p id="modalDesc" class="py-2"></p>
+
+    <div id="modalDetails" class="text-sm"></div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+
+  </div>
+</dialog>
+
+<script src="./home.js"></script>
 
 </body>
 </html>
