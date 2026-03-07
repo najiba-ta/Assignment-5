@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+     <!-- Tailwind + DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg bg-gray-100 p-10">
+    <div class="bg-white  p-8 shadow-lg w-96 rounded-xl flex flex-col justify-center ml-120">
+       <div>
+         <img src="./assets/github-logo.png" alt="" class="ml-26">
+       </div>
+       <div>
+        <div>
+    <h1 class="text-3xl font-bold text-center text-black-600 mb-2 ">GitHub Issue Tracker</h1>
+    <p class="text-gray-400 text-center">Sign in to manage your issue</p>
+       </div>
+       <form id="loginForm" class="space-y-4">
+        <p>Username</p>
+      <input type="text" id="user" placeholder="Username" class="input input-bordered w-full" required>
+      <p>Password</p>
+      <input type="password" id="pass" placeholder="Password" class="input input-bordered w-full" required>
+      <button type="submit" class="btn btn-primary w-full">Sign In</button>
+    </form>
+    <p class="text-center text-gray-700 mt-4">OR</p>
+    <div class="mt-2 text-gray-500 text-sm text-center bg-gray-100 p-4 rounded-md">
+      <h4 class="text-gray-600 font-semibold">Demo Credentials</h4>
+      <p>Username: admin</p>
+      <p>Password: admin123</p>
+    </div>
+    <p id="errMsg" class="text-red-500 text-center mt-2 hidden">Invalid credentials!</p>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
