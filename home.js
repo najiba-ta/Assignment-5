@@ -258,6 +258,34 @@ function displayShowModal(card) {
 }
 
 
+
+// search issue function button
+const searchBtnIssues = document.getElementById("search-issue-btn")
+    .addEventListener("click", () => {
+
+        const searchIssues = document.getElementById("search-issue");
+        let issuesInputValue = searchIssues.value.trim().toLowerCase();
+        //removeSpinner(true);
+        fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${issuesInputValue}`)
+
+            .then((res) => res.json())
+            .then((data) => {
+                const allData = data.data
+
+                const issueSearch = allData.filter((issue) => issue.title.toLowerCase().includes(issuesInputValue))
+
+                displayAllIssuesData(issueSearch);
+                //removeSpinner(false);
+            })
+
+
+    })
+
+
+
+
+
+//All Api Card Function
  allIssuesApi();
 
  

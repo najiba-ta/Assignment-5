@@ -21,8 +21,8 @@
     </div>
 
     <div>
-        <input id="searchInput" class="p-1 border rounded" type="text" placeholder="search issues">
-        <button onclick="searchIssues()" class="btn btn-primary">Search</button>
+        <input id="search-issue" class="p-1 border rounded" type="text" placeholder="search issues">
+        <button id="search-issue-btn" class="btn btn-primary">Search</button>
     </div>
 </div>
 
@@ -58,10 +58,7 @@
     </div>
 </div>
 
-<!-- Loading Spinner -->
-<div id="loadingSpinner" class="flex justify-center my-6 hidden">
-    <span class="loading loading-spinner loading-lg text-primary"></span>
-</div>
+
 
 <!-- Cards -->
 <section class="flex justify-center">
@@ -71,7 +68,6 @@ class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[80%]">
 
 </div>
 
-</section>
 
 <!-- Open the modal using ID.showModal() method -->
             <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
