@@ -30,9 +30,9 @@
 <div class="flex justify-center">
     <div class="bg-white p-4 shadow flex gap-2 mt-4 w-[80%] mb-5">
 
-        <button id="tabAll" class="btn" onclick="filterBtn('tabAll')">All</button>
-        <button id="tabOpen" class="btn" onclick="filterBtn('tabOpen')">Open</button>
-        <button id="tabClosed" class="btn" onclick="filterBtn('tabClosed')">Closed</button>
+        <button id="tabAll" class="btn" onclick="filterBtn('tabAll'); filterIssues('all')">All</button>
+        <button id="tabOpen" class="btn" onclick="filterBtn('tabOpen'); filterIssues('open')">Open</button>
+        <button id="tabClosed" class="btn" onclick="filterBtn('tabClosed');filterIssues('closed')">Closed</button>
 
     </div>
 </div>

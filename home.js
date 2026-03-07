@@ -143,9 +143,45 @@ const allIssuesApi = async () => {
 
 
  }
-  //displayAllIssuesData();
+  
+
+
+
+ // filter btn display show in toggle
+function filterIssues(status) {
+    //removeSpinner(true);
+
+   // setTimeout(() => {
+
+        if (status === "all") {
+            displayAllIssuesData(issueALLCard);
+        }
+
+        if (status === "open") {
+
+            const openIssues = issueALLCard.filter(issue => issue.status === "open");
+            displayAllIssuesData(openIssues);
+
+        }
+
+        if (status === "closed") {
+            const closedIssues = issueALLCard.filter(issue => issue.status === "closed");
+            displayAllIssuesData(closedIssues);
+        }
+
+        //removeSpinner(false);
+
+
+    }
+
+
 
  allIssuesApi();
 
  
+
+
+
+
+
 
