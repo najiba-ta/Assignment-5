@@ -1,3 +1,5 @@
+ const issueCount = document.getElementById("issueCount");
+ 
  let issueALLCard = [];
   const allCardContainer = document.getElementById("issuesContainer");
   
@@ -51,7 +53,7 @@ const allIssuesApi = async () => {
 
     allCardContainer.innerHTML ="";
 
-
+         issueCount.innerText=issues.length;
         issues.forEach(issue => {
             const div = document.createElement("div")
 
