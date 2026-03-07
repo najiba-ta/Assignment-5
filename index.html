@@ -7,10 +7,14 @@
      <!-- Tailwind + DaisyUI -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!--CSS-->
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body class="bg bg-gray-100 p-10">
-    <div class="bg-white  p-8 shadow-lg w-96 rounded-xl flex flex-col justify-center ml-120">
-       <div>
+    <!--Login Page-->
+    <div>
+        <div class="bg-white  p-8 shadow-lg w-96 rounded-xl flex flex-col justify-center ml-120">
+       <div id="loginPage">
          <img src="./assets/github-logo.png" alt="" class="ml-26">
        </div>
        <div>
@@ -23,7 +27,7 @@
       <input type="text" id="user" placeholder="Username" class="input input-bordered w-full" required>
       <p>Password</p>
       <input type="password" id="pass" placeholder="Password" class="input input-bordered w-full" required>
-      <button type="submit" class="btn btn-primary w-full">Sign In</button>
+      <button type="submit" class="btn btn-primary w-full" onclick="login()">Sign In</button>
     </form>
     <p class="text-center text-gray-700 mt-4">OR</p>
     <div class="mt-2 text-gray-500 text-sm text-center bg-gray-100 p-4 rounded-md">
@@ -31,8 +35,10 @@
       <p>Username: admin</p>
       <p>Password: admin123</p>
     </div>
-    <p id="errMsg" class="text-red-500 text-center mt-2 hidden">Invalid credentials!</p>
     </div>
+    
+    
+    
     <script src="./index.js"></script>
 </body>
 </html>
