@@ -6,7 +6,7 @@
 <title>GitHub Issue Tracker</title>
 <!--Font Awesome CDN-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <!--Tailwind & DaisyUi CDN -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -15,19 +15,19 @@
 <body class="bg bg-gray-100">
 
 <!-- Navbar -->
-<div class="flex justify-between bg-white py-2 px-4 items-center">
+<div class="flex flex-col gap-4 md:flex-row justify-between bg-white py-2 px-4 items-center">
     <div class="flex gap-3">
         <img src="./assets/Group.png" alt="">
-        <h1 class="text-3xl font-bold">GitHub Issues Tracker</h1>
+        <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
     </div>
 
-    <div>
-        <input id="search-issue" class="p-1 border rounded" type="text" placeholder="search issues">
+    <div class="flex gap-3">
+        <input id="search-issue" class="p-1 border rounded " type="text" placeholder="search issues">
         <button id="search-issue-btn" class="btn btn-primary">Search</button>
     </div>
 </div>
 
-<!-- Tabs -->
+<!-- Toggle button -->
 <div class="flex justify-center">
     <div class="bg-white p-4 shadow flex gap-2 mt-4 w-[80%] mb-5">
 
@@ -61,7 +61,7 @@
 
 
 
-<!-- Cards -->
+<!-- Card dekhanu hoyeche -->
 <section class="flex justify-center">
 
 <div id="issuesContainer"
@@ -75,12 +75,12 @@ class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[80%]">
 </section>
 
 
-<!-- Open the modal using ID.showModal() method -->
-            <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+            
             <dialog id="modal_card" class="modal modal-middle">
                 <div id="modal_container" class="modal-box space-y-3 max-w-[clamp(20rem,90vw,43.75rem)]">
 
-                    <!-- modal content -->
+                    <!-- modal dekhanu hoyeche  -->
 
                 </div>
             </dialog>
